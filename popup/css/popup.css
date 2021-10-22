@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+body{font-family: 'Noto Sans KR', sans-serif;}
+
+.popup{
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #ebebeb;
+    display: none;
+}
+
+
+.popup .image_box{
+    width: 300px;
+    height: 400px; 
+    background: url(../img/8.jpg) no-repeat center /cover ;
+    position: relative;
+}
+.popup .image_box .text{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;  
+    color: #fff;
+}
+
+.popup .image_box .text strong{
+    font-size: 25px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.popup .image_box .text em{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.popup .close_text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    background: #fff;
+}
+
+.popup .close_text .checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.popup .close_text .checkbox input{
+    width: 15px;
+    height: 15px;
+}
+
+.popup .close_text .checkbox label{
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+
+
+
+.popup .close_text .close{
+    cursor: pointer;
+    background: none;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+

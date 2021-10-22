@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+.gallery-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery{
+    display: grid; 
+    grid-gap: 50px;
+    grid-template-columns: repeat(2 , 600px); 
+    grid-template-rows: repeat(2 , 400px);
+}
+.gallery li a{}
+.gallery li a img{
+    width: 600px;
+    height: 400px;
+    object-fit: cover; 
+    display: block;
+}
+
+
+#lightbox-overlay{
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(29, 31, 33, 0.95);
+    transition: opacity 0.3s ease-in;
+}
+    #lightbox-overlay.visible{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+#lightbox-image{
+    width: 90vw;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+}

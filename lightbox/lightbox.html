@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light_box</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/lightbox.js"></script>
+</head>
+<body>
+    <div class="gallery-container">
+        <ul class="gallery">
+            <li><a href="#" alt="Gallery image"><img src="img/1.jpg" data-lightbox="img/1.jpg" alt="Gallery image"></a></li>
+            <li><a href="#" alt="Gallery image"><img src="img/2.jpg" data-lightbox="img/2.jpg" alt="Gallery image"></a></li>
+            <li><a href="#" alt="Gallery image"><img src="img/3.jpg" data-lightbox="img/3.jpg" alt="Gallery image"></a></li>
+            <li><a href="#" alt="Gallery image"><img src="img/4.jpg" data-lightbox="img/4.jpg" alt="Gallery image"></a></li>
+        </ul>
+    </div>
+
+    <div id="lightbox-overlay">
+        <img src="" alt="Lightbox image" title="Click anywhere to close" id="lightbox-image">
+    </div>
+
+    <script>
+        let button =  $(".gallery a"),
+            target = $("#lightbox-overlay"),
+            targetImg = target.find("img");
+
+            button.click(function(e){
+                e.preventDefault();
+                let newImg = $(this).find("img").attr("data-lightbox");
+
+                target.addClass("visible");
+                targetImg.attr("src",newImg);
+            });
+
+            target.click(function(){
+                $(this).removeClass("visible");
+            });
+    </script>
+    
+</body>
+</html>
