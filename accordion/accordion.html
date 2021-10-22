@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordion</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/accordion.js"></script>
+</head>
+<body>  
+    <div class="container">
+        <div class="wrap">
+            <div class="title">
+                <h2>QnA</h2>
+                <p>자주하는 질문</p>
+                <span></span>
+            </div>
+            <div class="qna_list">
+                <div class="item item1 active">
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>최신 납세증명서를 다운 받고 싶습니다.</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>국세, 지방세 납세증명서를 PDF파일로 다운받으실 수 있습니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>LS전선 채용 브로셔는 없나요?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>LS전선 채용 브로셔 PDF파일 다운로드 (클릭)</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>LS전선의 사업영역별 담당자를 알고 싶습니다.</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>LS전선 홈페이지 > 고객 지원 > 담당자 정보에서 확인하실 수 있습니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>LS전선에 대한 자료를 얻고 싶습니다.</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>홈페이지의 기업정보 부분에서 내용을 확인하신 후, 필요하신 내용이 없으시다면 구체적으로 어떤 자료가 필요하신지 명기하여 요청하여 주시기 바랍니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>제품 카탈로그는 어디에서 볼 수 있나요?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>예전에 지원하여 불합격한 적이 있습니다. 또 다시 지원해도 되는지요?</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                </div>
+                <div class="item item2">
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>신입 및 경력사원 공채 시기가 따로 정해져 있습니까?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>당사는 해당 분야의 인재 소요가 발생될 경우 수시로 채용을 진행하고 있습니다.<br>
+                                채용계획이 수립되면 통상적으로 홈페이지나 취업관련 사이트에 공고를 하고 있으니 해당 사이트와 당사 홈페이지를 확인하시기 바랍니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>보훈 대상자는 가산점을 받을 수 있나요?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>당사는 관계 법령에 의거하여 취업보호 대상자를 우대합니다.<br>
+                                서류전형 통과시 관련 서류를 제출해 주시면 되겠습니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>모집 전공과 다른 분야를 전공했을 경우에도 지원이 가능합니까?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>채용 분야에 따라 전공은 원칙적으로 제한이 되어 있습니다.<br>
+                                다만, 전공의 범위는 폭넓게 인정하고 있으며 관련 학과 및 유사 학과일 경우는 지원이 가능합니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>나이 제한이 있습니까?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>특별히 나이 제한을 두고 있지 않습니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>지원 시 외국어 점수나 자격증은 어느 정도 영향을 미치나요?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>외국어 점수나 자격증은 당락의 절대적 영향을 미치지는 않습니다.<br>
+                                다만, 지원하신 부문이 외국어 능력이나 자격증을 필요로 하는 경우, 가점이 부여될 수 있습니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                </div>
+                <div class="item item3">
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>인·적성 검사와 신체검사에서도 불합격하는 경우가 있습니까?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>인·적성 검사와 신체검사 모두 중요한 전형과정이므로 회사가 정하는 기준을 충족하지 못하는 경우에는 합격할 수 없게 됩니다.<br>
+                                다만, 당사는 신체장애를 이유로 채용과정에서 차별을 하지 않습니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>인·적성 검사는 어떻게 진행되며 어떤 형식입니까?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>인·적성검사는 당사가 중요하게 생각하는 지원자의 역량 보유수준을 평가하는 일종의 객관식 테스트입니다.<br>
+                                소요시간은 총 2~3시간 정도입니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>면접은 어떤 식으로 진행되나요?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>대졸신입사원의 경우 서류전형 → 인·적성검사 → 면접의 형태로 진행되며, 면접은 1차와 2차로 나누어 진행될 수 있습니다.<br>
+                                면접에는 실무관리자와 임원급 면접관이 참석할 수 있으며, 집단비교면접형태로 진행됩니다.</em>
+                            </div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>고졸 생산직과 전문대 채용은 언제 하나요?</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>충원시기가 특별히 정해져 있지는 않습니다.<br>
+                                생산직 및 초대졸 채용은 인력소요 발생시 사업장별로 채용을 진행하고 있으며, 채용시에는 당사 홈페이지에 공지를 하고 있습니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="questions">
+                        <div class="wrap">
+                            <div class="icon"><em>Q</em></div>
+                            <div class="text"><em>입사에서 부서 배치까지의 절차를 알고 싶습니다.</em></div>
+                        </div>
+                        <div class="plus">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <span></span>
+                        <div class="wrap">
+                            <div class="icon"><em>A</em></div>
+                            <div class="text"><em>신입공채사원의 경우 최종합격 통보 후 1.1일자로 입사하며, 경력직 및 수시 채용의 경우 입사가능일을 협의하여 부서별 배치가 이루어 집니다.<br>
+                                신입공채 사원은 약 5주간의 신입사원 연수 이후 부서별 OJT를 실시합니다.</em></div>
+                        </div>
+                    </div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="btn">
+                <ul>
+                    <li class="active"><a href="#"><em>1</em></a></li>
+                    <li><a href="#"><em>2</em></a></li>
+                    <li><a href="#"><em>3</em></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>

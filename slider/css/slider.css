@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+/* 2021.10.22end */
+
+/* 슬라이더 */
+.wrap{/* 슬라이드 가운대 정렬 */
+    /* height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center; */
+}
+.slider{
+    background: #000;
+    width: 100vw; /* 슬라이드의 최소 넓이 */
+    height: 100vh; /* 슬라이드의 높이 */
+    overflow: hidden; /* 넘치는 부분은 안보이게 설정 */
+    position: relative; /* 부모가 기준 */
+}
+.slider .slide_list{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slider .slide_list .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.slider .slide_list .slide figure img{/* 이미지 사이즈 */
+    width: 100vw;
+    height: 100vh; 
+    object-fit: cover;
+}
+.slider .slide_list .slide figure figcaption{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.slider .slide_list .slide figure figcaption em{
+    display: block;
+    font-size: 100px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    transform: translateX(10%);
+    opacity: 0;
+    transition: all 1.6s;
+}
+.slider .slide_list .slide.active figure figcaption em{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* 좌우 화살표 */
+.slider_nav{}
+.slider_nav a{/* 좌우 버튼은 slideshow 기준으로 중앙으로 위치 */
+    width: 50px;
+    height: 50px;
+    background: #fff; 
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.slider_nav .prev{/* 중앙으로 부터 왼쪽으로 이동 */
+    margin-left: -615px;
+}
+.slider_nav .next{/* 중앙으로 부터 오른쪽으로 이동 */
+    margin-left: 615px;
+}
+.slider_nav a.disabled{
+    display: none;
+}
+.slider_nav a i{/* 좌우 버튼의 icon */
+    font-size: 30px; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%,-50%);
+}
+
+/* 닷 */
+.indicator{/* 닷 버튼은 slideshow 기준으로 중앙으로 위치 */
+    position: absolute; 
+    bottom: 10%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.indicator a{/* 닷 버튼 크기와 배경색 */
+    width: 20px;
+    height: 20px;
+    background: #ccc; 
+    margin: 0 5px; 
+    border-radius: 50%;
+    text-indent:-9999px;
+    transition: all 0.4s;
+}
+.indicator a.active{/* 닷 active 배경색 */
+    width: 40px;
+    background: linear-gradient(to right, #F5515F 0%, #A1051D 100%);
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
