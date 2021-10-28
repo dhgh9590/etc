@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax1</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/parallax1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+
+</head>
+<body>
+
+    <main class="parallax">
+        <section class="section1">
+            <div class="arrow">
+                <a href="#"><i class="fas fa-chevron-up"></i></a>
+                <a href="#"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="arrow">
+                <a href="#"><i class="fas fa-chevron-up"></i></a>
+                <a href="#"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </section>
+        <section class="section3">
+            <div class="arrow">
+                <a href="#"><i class="fas fa-chevron-up"></i></a>
+                <a href="#"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </section>
+        <section class="section4">
+            <div class="arrow">
+                <a href="#"><i class="fas fa-chevron-up"></i></a>
+                <a href="#"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        let section = $(".parallax > section"),
+            sectionInfo = [],  //빈 배열
+            currentSection = 0;
+
+        section.each(function(i){                        //each section마다 할일
+            let $this = $(this);
+            let Upbtn = $this.find(".arrow > a:eq(0)");
+            let Dowbtn = $this.find(".arrow > a:eq(1)");
+
+            sectionInfo.push($this.offset().top);       //push는 배열에 값을 넣어줌 this의 offset값으로 section마다 높이를 구해옴
+
+            /* 위아래 이동 버튼 */
+            Upbtn.click(function(e){
+                e.preventDefault();
+                if(i == 0){
+                    return;
+                }else{
+                    move(i-1);
+                }
+            });
+
+            Dowbtn.click(function(e){
+                e.preventDefault();
+                if(i == sectionInfo.length - 1){
+                    return;
+                }else{
+                    move(i+1);
+                }
+            });
+
+        });//section.each
+
+        function move(i){
+            let tt = sectionInfo[i];
+
+            $("html,body").stop().animate({scrollTop:tt},1000 );
+            currentSection = i;
+        }
+
+        //console.log(sectionInfo);
+        section.css({position:"fixed"});                //모든 section을 position fixed로 변경
+
+        $(window).scroll(function(){
+            let scrollTop = $(this).scrollTop();        //scrollTop 변수
+
+            section.each(function(idx){                 //idx로 순번을 물고 들어옴 0 , 1 , 2 ..이런식으로 저장
+                let $this = $(this);
+                let newtop = sectionInfo[idx] - scrollTop; //newtop에는 section의 idx - scrolltop을 저장
+
+                if(scrollTop > sectionInfo[idx]){
+                    newtop *= 0.5;                      //newtop = newtop * 0.5;
+                }
+                $this.css({top:newtop});                //this로 section마다 top값을 newtop으로 변경
+            });
+
+        });//window scroll event
+
+        let excuted = false;
+        section.mousewheel(function(event) {  //마우스 up1 ,down -1
+            if(!excuted){
+                //console.log(event.deltaY);
+                if(event.deltaY == -1){
+                    move(currentSection + 1);
+                }else{
+                    move(currentSection - 1);
+                }
+                excuted = true;
+            }
+            setTimeout(function(){
+                excuted = false;
+            },100);
+        });
+        
+
+
+    </script>
+</body>
+</html>
