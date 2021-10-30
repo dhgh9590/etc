@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* #container{display: flex; width: 300%;height: 100vh;} 좌우 스크롤 */
+        #section1{width: 100vw;height: 150vh;background: #ccc; display: flex; justify-content: space-around; align-items: center;}
+        #section2{width: 100vw;height: 150vh;background: #555; display: flex; justify-content: space-around; align-items: center;}
+        #section3{width: 100vw;height: 150vh;background: #888; display: flex; justify-content: space-around; align-items: center;}
+
+
+        .box{width: 500px;height: 600px;}
+        .box1{background: red;}
+        .box2{background: blue;}
+
+     </style>
+
+</head>
+<body>
+    <main id="container">
+        <section id="section1">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+        </section>
+        <section id="section2">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+        </section>
+        <section id="section3">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+        </section>
+    </main>
+    
+</section>
+
+    <script>
+        let tl1 = gsap.timeline();
+
+        /* 좌우 스크롤
+        gsap.registerPlugin(ScrollTrigger);
+        let SECTIONS = gsap.utils.toArray("section");
+
+            gsap.to(SECTIONS, {
+            xPercent: -100 * ( SECTIONS.length -1 ),
+            ease: "none",
+            scrollTrigger: {
+                trigger: '#container',
+                end: ()=> "+=" + document.querySelector("#container").offsetWidth,
+                pin: true,
+                scrub: 1,
+                snap: 1 / (SECTIONS.length -1),
+            }
+        });
+        */
+
+                
+        gsap.to("#section1 .box1",{ //움직여야 하는 요소 선택 / from은 역재생 to는 정상진행 
+            scrollTrigger:{
+                trigger:"#section1",  //시작,끝 범위 요소
+                start:"40% 50%", // 처음0%는 시작지점,50%는 내가 보는 시야 /start와 scroller-start가 맞나면 시작
+                end: "65% 50%", // 처음2%는 시작지점,50%는 내가 보는 시야
+                //toggleActions:"restart none none none", //restart pause resume reverse
+                scrub:6,
+                markers:true, //시야 on/off 표시
+                pin: "#section1 .box1", //pinn은 scrub과 같이 사용할 수 없음 
+            },
+
+            duration:3,
+        },1);
+
+        gsap.from("#section1 .box2",{
+            scrollTrigger:{
+                trigger:"#section1 .box2",
+                start:"20% 50%",
+                end: "40% 50%",
+                //toggleActions:"restart none none none", //restart pause resume reverse
+                scrub:6,
+                markers:true
+            },
+            x:500,
+            opacity:0,
+            duration:3,
+        },1);
+
+        gsap.from("#section2 .box1",{
+            scrollTrigger:{
+                trigger:"#section2 .box1",
+                start:"0% 50%",
+                end: "20% 50%",
+                //toggleActions:"restart none none none", //restart pause resume reverse
+                scrub:6,
+                markers:true
+            },
+            y:-500,
+            opacity:0,
+            duration:3,
+        },1);
+
+        gsap.from("#section2 .box2",{
+            scrollTrigger:{
+                trigger:"#section2 .box2",
+                start:"0% 50%",
+                end: "20% 50%",
+                //toggleActions:"restart none none none", //restart pause resume reverse
+                scrub:6,
+                markers:true
+            },
+            x:500,
+            opacity:0,
+            duration:3,
+        },1);
+
+        gsap.from("#section3 .box1",{
+            scrollTrigger:{
+                trigger:"#section3 .box1",
+                start:"0% 50%",
+                end: "20% 50%",
+                //toggleActions:"restart none none none", //restart pause resume reverse
+                scrub:6,
+                markers:true
+            },
+            x:500,
+            opacity:0,
+            duration:3,
+        },1);
+
+        gsap.from("#section3 .box2",{
+            scrollTrigger:{
+                trigger:"#section3 .box2",
+                start:"-100% 50%",
+                end: "-90% 50%",
+                //toggleActions:"restart none none none", //restart pause resume reverse
+                scrub:6,
+                markers:true
+            },
+            y:500,
+            opacity:0,
+            duration:3,
+        },1);
+
+
+
+    </script>
+</body>
+</html>

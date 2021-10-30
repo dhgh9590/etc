@@ -4,7 +4,7 @@ $(document).ready(function(){
     slideGroup = container.find(".slide_list"),// find로 변수를 잡을 경우 더 빠르게 찾음
     slides = slideGroup.find(".slide"),              // 슬라이더 
     nav = container.find(".slider_nav"),          // 슬라이더 좌우 화살표 
-    indicator = container.find(".indicator"),        // 슬라이더 닷을 감싸는 부모
+    indicator = $(".indicator"),        // 슬라이더 닷을 감싸는 부모
     slideCount = slides.length,                      // 슬라이더 갯수 
     indicatorHtml = "",                              // 슬라이더 닷 : 몇개가 들어올지 모르니 빈값으로 지정
     currentIndex = 0,                                // 현재 어디를 보고 있는지 구분  
