@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="js/slick.min.js"></script>
+
+    <style>
+        #section1{width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+        #section1 form{}
+        #section1 form .name{}
+        #section1 form .email{}
+        #section1 form .submit{}
+        button{background: none;border: none;}
+        fieldset{}
+
+    </style>
+
+</head>
+<body>
+
+
+    <section id="section1">
+        <form action="#" method="POST"> <!-- 유효성 검사 끄기 required -->
+            <fieldset>
+                <legend>필수입력</legend>
+                <div class="name">
+                    <label for="username">이름:</label>
+                    <input type="text" id="username" name="username" placeholder="이름을 입력해주세요." required minlength="2" maxlength="5">
+                </div>
+                <div class="email">
+                    <label for="useremail">이메일:</label>
+                    <input type="email" id="useremail" name="useremail" placeholder="이메일을 입력해주세요." required>
+                </div>
+                <div class="password">
+                    <label for="userpassword">비밀번호:</label>
+                    <input type="password" id="userpassword" name="userpassword" placeholder="비밀번호를 입력해주세요." required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>부가 입력</legend>
+                <div>
+                    <label for="address">거주지를 선택해주세요</label>
+                    <select name="address" id="address">
+                        <option value="" disabled>거주지를 선택해주세요.</option>
+                        <option value="서울시">서울시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="제주도">제주도</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>성별을 선택해주세요.</h2>
+                    <label for="men">남성</label>
+                    <input type="radio" id="men" name="gender" value="남성" checked>
+
+                    <label for="women">여성</label>
+                    <input type="radio" id="women" name="gender" value="여성">
+                </div>
+                <div>
+                    <h2>관심사항 체크</h2>
+                    <label for="HTML">HTML</label>
+                    <input type="checkbox" id="HTML" name="interset" value="HTML">
+
+                    <label for="CSS">CSS</label>
+                    <input type="checkbox" id="CSS" name="interset" value="CSS">
+
+                    <label for="Javascript">Javascript</label>
+                    <input type="checkbox" id="Javascript" name="interset" value="Javascript">
+                </div>
+                <div>
+                    <h2>사진을 등록해주세요.</h2>
+                    <input type="file" name="avatar">
+                </div>
+                <div>
+                    <h2>방문경로를 말씀해주세요.</h2>
+                    <textarea name="msg" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <h2>회원약관</h2>
+                    <textarea name="policy" id="" cols="100" rows="10" readonly>
+여러분을 환영합니다.
+네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+
+네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.
+
+다양한 네이버 서비스를 즐겨보세요.
+네이버는 www.naver.com을 비롯한 네이버 도메인의 웹사이트 및 응용프로그램(어플리케이션, 앱)을 통해 정보 검색, 다른 이용자와의 커뮤니케이션, 콘텐츠 제공, 상품 쇼핑 등 여러분의 생활에 편리함을 더할 수 있는 다양한 서비스를 제공하고 있습니다.
+여러분은 PC, 휴대폰 등 인터넷 이용이 가능한 각종 단말기를 통해 각양각색의 네이버 서비스를 자유롭게 이용하실 수 있으며, 개별 서비스들의 구체적인 내용은 각 서비스 상의 안내, 공지사항, 네이버 웹고객센터(이하 ‘고객센터’) 도움말 등에서 쉽게 확인하실 수 있습니다.
+
+네이버는 기본적으로 여러분 모두에게 동일한 내용의 서비스를 제공합니다. 다만, '청소년보호법' 등 관련 법령이나 기타 개별 서비스 제공에서의 특별한 필요에 의해서 연령 또는 일정한 등급을 기준으로 이용자를 구분하여 제공하는 서비스의 내용, 이용 시간, 이용 횟수 등을 다르게 하는 등 일부 이용을 제한하는 경우가 있습니다. 자세한 내용은 역시 각 서비스 상의 안내, 공지사항, 고객센터 도움말 등에서 확인하실 수 있습니다.
+
+네이버 서비스에는 기본적으로 본 약관이 적용됩니다만 네이버가 다양한 서비스를 제공하는 과정에서 부득이 본 약관 외 별도의 약관, 운영정책 등을 적용하는 경우(예, 네이버페이, V LIVE 등)가 있습니다. 그리고 네이버 계열사가 제공하는 특정 서비스의 경우에도(예, LINE, SNOW등) 해당 운영 회사가 정한 고유의 약관, 운영정책 등이 적용될 수 있습니다. 이러한 내용은 각각의 해당 서비스 초기 화면에서 확인해 주시기 바랍니다.
+
+회원으로 가입하시면 네이버 서비스를 보다 편리하게 이용할 수 있습니다.
+여러분은 본 약관을 읽고 동의하신 후 회원 가입을 신청하실 수 있으며, 네이버는 이에 대한 승낙을 통해 회원 가입 절차를 완료하고 여러분께 네이버 서비스 이용 계정(이하 ‘계정’)을 부여합니다. 계정이란 회원이 네이버 서비스에 로그인한 이후 이용하는 각종 서비스 이용 이력을 회원 별로 관리하기 위해 설정한 회원 식별 단위를 말합니다. 회원은 자신의 계정을 통해 좀더 다양한 네이버 서비스를 보다 편리하게 이용할 수 있습니다. 이와 관련한 상세한 내용은 계정 운영정책 및 고객센터 내 네이버 회원가입 방법 등에서 확인해 주세요.
+                    </textarea>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>HTML5 새로운 타입</legend>
+                <div>
+                    <label for="website">website</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                <div>
+                    <label for="birth">생년월일</label>
+                    <input type="text" id="birth" name="birth">
+                </div>
+                <div>
+                    <label for="langs">학습할 언어 선택</label>
+                    <input id="langs" name="langs" list="mylist">
+                    <datalist id="mylist">
+                        <option value="html">html</option>
+                        <option value="css">css</option>
+                        <option value="Javascript">Javascript</option>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="career">경력기간</label>
+                    <input type="number" id="career" name="career" min="0" max="10" value="0">
+                </div>
+                <div>
+                    <label for="language">학습언어 선택</label>
+                    <select name="language" id="language">
+                        <optgroup label="frontend">
+                            <option value="html">html</option>
+                            <option value="css">css</option>
+                            <option value="Javascript">Javascript</option>
+                        </optgroup>
+                        <optgroup label="backend">
+                            <option value="asp">asp</option>
+                            <option value="jsp">jsp</option>
+                            <option value="php">php</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="skill">숙련도</label>
+                    <input type="range" id="skill" name="skill" min="0" max="10" value="5">
+                </div>
+                <div>
+                    <label for="phone">전화번호</label>
+                    <input type="text" id="phone" name="phone" pattern="[0-9]{1,11}" maxlength="11" title="숫자만 최대 11자리까지 입력해주세요.">
+                </div>
+                <div>
+                    <label for="useremails">이메일 선택</label>
+                    <input type="text" id="useremails" name="useremails">@
+                    <select title="이메일 서비스 선택"> <!-- multiple size="3" 다중선택-->
+                        <option value="직접입력">직접입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="gmail.com">gmail.com</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <div class="submit">
+                <!-- <input type="submit" value="전송"> -->
+                <!-- <button type="reset">초기화</button> -->
+                <button>전송</button>
+            </div>
+        </form>
+
+        <hr>
+        <meter value="3" max="10" min="0"></meter> <!-- 진행률 표시 -->
+        <progress value="3" max="10" min="0"></progress>
+        
+    </section>
+
+
+
+
+    <script>
+
+        $(function(){
+            $("#birth").datepicker();
+        });
+
+    </script>
+</body>
+</html>
