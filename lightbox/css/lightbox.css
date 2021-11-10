@@ -35,14 +35,14 @@
     background: rgba(29, 31, 33, 0.95);
     transition: opacity 0.3s ease-in;
 }
-    #lightbox-overlay.visible{
-        opacity: 1;
-        pointer-events: auto;
-    }
+#lightbox-overlay.visible{
+    opacity: 1;
+    pointer-events: auto;
+}
 
 #lightbox-image{
-    width: 90vw;
-    height: 90vh;
+    width: 500px;
+    height: 500px;
     position: absolute;
     top: 50%;
     left: 50%;

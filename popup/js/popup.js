@@ -4,6 +4,12 @@ $(document).ready(function(){
     checkbox = document.querySelector("#popup"),
     popupclose = document.querySelector(".close");
 
+    /* 2번째 쿠키
+    let myPopup1 = document.querySelector(".popup1"),
+    checkbox1 = document.querySelector("#popup1"),
+    popupclose1 = document.querySelector(".close1");
+    */
+
     //쿠키 생성
     function setCookie(name,value,day){
         let date = new Date(); //현재 날짜 지정.
@@ -41,7 +47,6 @@ $(document).ready(function(){
                 visited = true;
             }
         }
-
         
         if(visited){
             //재방문
@@ -50,7 +55,6 @@ $(document).ready(function(){
             //신규방문
             myPopup.style.display = "block";
         }
-        
     }
     checkCookie("OH.com");//OH.com 쿠키가 있는지 확인
 
@@ -65,6 +69,47 @@ $(document).ready(function(){
             delCookie("OH.com");
         }
     });
+
+    /* 2번째 팝업
+
+    //쿠키 확인
+    function checkCookie1(name){
+        let cookies = document.cookie.split(";");
+        let visited = false; //방문 거짓
+
+        for(let i in cookies){
+            if(cookies[i].indexOf(name) > -1){
+                visited = true;
+            }
+        }
+
+        
+        if(visited){
+            //재방문
+            myPopup1.style.display = "none";
+        }else{
+            //신규방문
+            myPopup1.style.display = "block";
+        }
+        
+    }
+    checkCookie1("OH1.com");//OH.com 쿠키가 있는지 확인
+
+    popupclose1.addEventListener("click",function(){
+        if(checkbox1.checked){
+            //체크가 되어 있다면 팝업을 다시 안보겠다. 팝업은 닫고, 쿠키 생성.
+            setCookie("OH1.com","Main",1); //하루 안보기 1,일주일 안보기 7
+            myPopup1.style.display = "none";
+        }else{
+            //체크를 하지 않는다면 팝업을 계속 본다.팝업은 닫고 , 쿠키 제거.
+            myPopup1.style.display = "none";
+            delCookie("OH1.com");
+        }
+    });
+
+    */
+
+    
 
 
 

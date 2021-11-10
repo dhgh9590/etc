@@ -4,7 +4,6 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 .popup{
     position: fixed;
-    z-index: 9999;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -66,17 +65,85 @@ body{font-family: 'Noto Sans KR', sans-serif;}
     margin-left: 5px;
 }
 
-
-
-
 .popup .close_text .close{
     cursor: pointer;
     background: none;
     font-size: 14px;
 }
 
+/* 2번째 팝업
+.popup1{
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #ebebeb;
+    display: none;
+}
 
 
+.popup1 .image_box{
+    width: 300px;
+    height: 400px; 
+    background: url(../img/8.jpg) no-repeat center /cover ;
+    position: relative;
+}
+.popup1 .image_box .text{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;  
+    color: #fff;
+}
+
+.popup1 .image_box .text strong{
+    font-size: 25px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.popup1 .image_box .text em{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.popup1 .close_text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    background: #fff;
+}
+
+.popup1 .close_text .checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.popup1 .close_text .checkbox input{
+    width: 15px;
+    height: 15px;
+}
+
+.popup1 .close_text .checkbox label{
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+
+
+
+.popup1 .close_text .close1{
+    cursor: pointer;
+    background: none;
+    font-size: 14px;
+}
+*/
 
 
 

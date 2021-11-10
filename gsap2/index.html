@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap_가로 모드</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+
+    <style>
+        body{overflow-x: hidden;} /* 가로 스크롤바X */
+        ::-webkit-scrollbar { display: none; }/* 가로,세로 스크롤바X */
+        #main{display: flex; width: 500vw;height: 100vh;}/* section 갯수 증가시 width값 100vw씩 증가 */
+        #section1{width: 100vw;height: 100vh;background: linear-gradient(to right,#FCDF8A 0%,#F38381 100%);}
+        #section2{width: 100vw;height: 100vh;background: linear-gradient(to bottom,#13F1FC 0%,#0470DC 100%);}
+        #section3{width: 100vw;height: 100vh;background: linear-gradient(to left,#42E695 0%,#3BB2B8 100%);}
+        #section4{width: 100vw;height: 100vh;background: linear-gradient(to right,#6253E1 0%,#04BEFE 100%);}
+        #section5{width: 100vw;height: 100vh;background: linear-gradient(to bottom,#ED6EA0 0%,#FBB03B 100%);}
+    </style>
+
+</head>
+<body>
+    <main id="main">
+        <section id="section1"></section>
+        <section id="section2"></section>
+        <section id="section3"></section>
+        <section id="section4"></section>
+        <section id="section5"></section>
+    </main>
+
+    <script>
+
+        //스크롤하면 #section에 클래스 active 추가
+        $(window).scroll(function(){
+            let scrollTop = $(window).scrollTop();
+            
+            if(scrollTop >= $("#section1").offset().left){
+                $("#section1").addClass("active");
+            }else{
+                $("#section1").removeClass("active");
+            }
+
+            if(scrollTop >= $("#section2").offset().left - 1500){
+                $("#section2").addClass("active");
+            }else{
+                $("#section2").removeClass("active");
+            }
+
+            if(scrollTop >= $("#section3").offset().left + 1000){
+                $("#section3").addClass("active");
+            }else{
+                $("#section3").removeClass("active");
+            }
+
+            if(scrollTop >= $("#section4").offset().left + 3300){
+                $("#section4").addClass("active");
+            }else{
+                $("#section4").removeClass("active");
+            }
+
+            if(scrollTop >= $("#section5").offset().left + 5700){ //section 추가시 left + 2400씩 더하기
+                $("#section5").addClass("active");
+            }else{
+                $("#section5").removeClass("active");
+            }
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+            let section = gsap.utils.toArray("section"); //움직여야 할 자식 선택
+
+            gsap.to(section, {
+            xPercent: -100 * ( section.length -1 ),
+            ease: "none",
+            scrollTrigger: {
+                trigger: '#main', //부모 박스 선택
+                end: ()=> "+=" + document.querySelector("#main").offsetWidth,
+                pin: true,
+                scrub: 1, //이동 속도
+                snap: 1 / (section.length -1),//마우스 휠 컨트롤(1페이지씩 이동),삭제시 마우스 휠값에 따라 이동
+            }
+        });
+    </script>
+</body>
+</html>
