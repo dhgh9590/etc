@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accodion</title>
+
+    <style>
+        html, body {
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0;
+        background-color: #f0f0f0;
+        }
+
+        .container {
+        width: 90%;
+        margin: 0 auto;
+        }
+
+        .panel-question {
+        margin-bottom: 20px;
+        background-color: #fff;
+        }
+
+        .panel-question.active{
+
+        }
+
+        .panel-heading {
+        font-weight: bold;
+        padding: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        }
+
+        .panel-body {
+        padding: 15px;
+        }
+
+        #btn-collapse {
+        margin-bottom: 10px;
+        background-color: #999;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 5px;
+        float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="btn-collapse">Collapse All</button>
+        <h2>FAQ</h2>
+        <section id="faq">
+          <div class="panel-question active">
+            <div class="panel-heading">
+              + Lorem ipsum dolor sit?
+            </div>
+            <div class="panel-body" id="thisone">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+              <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+            </div>
+          </div>
+          
+          <div class="panel-question">
+            <div class="panel-heading">
+              + Lorem ipsum dolor sit?
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+              <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+            </div>
+          </div>
+          
+          <div class="panel-question">
+            <div class="panel-heading">
+              + Lorem ipsum dolor sit?
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+              <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+  <script>
+    let btnCollapse = document.getElementById("btn-collapse"),
+        heading = document.getElementsByClassName("panel-heading"),
+        question = document.getElementsByClassName("panel-question"),
+        answer = document.getElementsByClassName("panel-body");
+
+    for(let i=0; i<heading.length; i++){ //heading들 마다 할 일
+      heading[i].addEventListener("click",function(ev){
+        
+        for(let y=0; y<question.length;y++){ //question들 마다 할 일
+          question[y].classList.remove("active"); //모든 question의 active를 삭제
+          ev.target.parentNode.classList.add("active"); //parentNode는 클릭한 녀석의 바로 위의 부모를 선택
+          activateBody();
+        }
+
+      });
+    }
+
+    function activateBody(){ //answer 전부를 접음
+      //panel-body 모두 안보이도록
+      for(let x=0; x<answer.length; x++){ //answer들 마다 할 일
+        answer[x].style.display = "none";
+      }
+
+      //클래스명 active panel-question 자식중 panel-body 나타나도록
+      let activePanel = document.querySelector(".panel-question.active .panel-body");//active가 있는 body 선택
+      activePanel.style.display = "block";
+    }
+
+    activateBody();
+
+    btnCollapse.addEventListener("click",function(){
+      for(let i = 0; i<answer.length; i++){
+        answer[i].style.display = "none";
+      }
+      
+    });
+
+   
+    
+  </script>
+</body>
+</html>
