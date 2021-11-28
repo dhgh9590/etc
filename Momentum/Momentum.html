@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+  <meta charset="UTF-8">
+  <title>test1</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+  
+  <style>
+      .hidden{
+          display: none;
+      }
+
+
+  </style>
+</head>
+<body>
+
+    <form id="login-form" class="hidden">
+        <input type="text" required maxlength="15" placeholder="what is your name?">
+        <input type="submit" value="log In">
+    </form>
+    <h2 id="clock">00:00:00</h2>
+    <h1 id="greeting" class="hidden"></h1>
+    <form action="#" id="todo-form">
+        <input type="text" placeholder="Write a To Do and press Enter">
+    </form>
+    <ul id="todo-list"></ul>
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
+    
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    
+</body>
+</html>
