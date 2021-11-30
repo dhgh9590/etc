@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>test1</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  
+  <style>
+      nav:first-child{width: 100%;height: 100px; }
+
+      nav ul{display: flex; justify-content: center; align-items: center; text-align: center; position: relative; width: 700px;margin: 0 auto; }
+      nav:first-child ul{ height: 100px;}
+      nav:nth-child(2) ul{flex-direction: column;}
+
+      nav ul li{margin:20px;}
+
+      nav ul li a{}
+
+      nav ul li a em{font-size: 20px;}
+
+      #horizontal-underline{ width: 0;height: 4px;  position: absolute;top: 0;left: 0; background: pink; transition: left 0.5s;}
+      #vertical-underline{ width: 0;height: 4px;  position: absolute;top: 0;left: 50%; background: pink; transition: width,top  0.5s,0.5s;}
+  </style>
+  
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#"><em>About</em></a></li>
+            <li><a href="#"><em>Menu</em></a></li>
+            <li><a href="#"><em>Store</em></a></li>
+            <li><a href="#"><em>Service</em></a></li>
+            <li><a href="#"><em>Responsibility</em></a></li>
+            <div id="horizontal-underline"></div>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul>
+            <li><a href="#"><em>About</em></a></li>
+            <li><a href="#"><em>Menu</em></a></li>
+            <li><a href="#"><em>Store</em></a></li>
+            <li><a href="#"><em>Service</em></a></li>
+            <li><a href="#"><em>Responsibility</em></a></li>
+            <div id="vertical-underline"></div>
+        </ul>
+    </nav>
+
+    <script>
+        let horizontalUnderline = document.getElementById("horizontal-underline");
+        let horizontalVertical = document.getElementById("vertical-underline");
+        let horizontalMenus = document.querySelectorAll("nav:first-child ul li a");
+        let verticalMenus = document.querySelectorAll("nav:nth-child(2) ul li a");
+
+        function horizontaIndicator(e){//가로 메뉴
+            horizontalUnderline.style.left = e.currentTarget.offsetLeft + "px";
+            horizontalUnderline.style.width = e.currentTarget.offsetWidth + "px";
+            horizontalUnderline.style.top = e.currentTarget.offsetTop + e.currentTarget.offsetHeight + "px";
+        }
+
+        function verticalIndicator(e){ //세로 메뉴
+            horizontalVertical.style.left = e.currentTarget.offsetLeft + "px";
+            horizontalVertical.style.width = e.currentTarget.offsetWidth + "px";
+            horizontalVertical.style.top = e.currentTarget.offsetTop + e.currentTarget.offsetHeight + "px";
+        }
+
+        horizontalMenus.forEach((menu) => //가로 메뉴
+            menu.addEventListener("mouseenter", (e) => 
+                horizontaIndicator(e))
+        );
+
+        verticalMenus.forEach((menu) =>  //세로 메뉴
+            menu.addEventListener("mouseenter", (e) => 
+                verticalIndicator(e))
+        );
+
+    </script>
+</body>
+</html>
