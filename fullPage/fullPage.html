@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+
+    <style>
+        .container{max-width: 1280px; margin: 0 auto;}
+
+        #section1{width: 100%;height: 100vh;background: linear-gradient(to right,#FCDF8A 0%,#F38381 100%); }
+        #section2{width: 100%;height: 100vh;background: linear-gradient(to bottom,#13F1FC 0%,#0470DC 100%);}
+        #section3{width: 100%;height: 100vh;background: linear-gradient(to left,#42E695 0%,#3BB2B8 100%);}
+
+    </style>
+
+</head>
+<body>
+    <main id="fullpage">
+        <section id="section1" class="section"></section>
+        <section id="section2" class="section"></section>
+        <section id="section3" class="section"></section>
+    </main>
+
+    <script>
+
+
+    $('#fullpage').fullpage({
+        //options here
+        autoScrolling:true,
+        scrollHorizontally: true,
+        navigation:true,
+        navigationPosition:"right",
+        // responsiveWidth: 800,
+        keyboardScrolling:true
+        });
+
+    </script>
+</body>
+</html>
