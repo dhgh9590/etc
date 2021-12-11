@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+body{font-family: 'Noto Sans KR', sans-serif;}
+
+/* layout */
+#nav{width: 100%; height: 100px; background: #ccc; text-align: center; position: fixed; z-index: 9999;transition: all 0.9s; }
+#header{}
+#main{height: 200vh;}
+#footer{}
+
+#section1{}
+
+/* 가운데 영역 */
+.container{max-width: 1280px; margin: 0 auto;}
+
+/* nav */
+#nav em{font-size: 50px;}
+#nav.hide {margin-top: -100px;background: rgba(255, 255 , 255, 1);overflow: hidden;}
+
+

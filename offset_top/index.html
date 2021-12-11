@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>offset_top</title>
+
+    <link rel="stylesheet" href="css/reset.css"><!-- 리셋 css -->
+    <link rel="stylesheet" href="css/style.css"><!-- 스타일 css -->
+    <link rel="stylesheet" href="css/slick.css"><!-- 슬릭 슬라이드 css -->
+    <link rel="stylesheet" href="css/font-awesome.css"><!-- 폰트어썸 구버전 css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"><!-- 폰트어썸 신버전 CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- 제이쿼리 js -->
+    <script src="js/jquery-ui.min.js"></script><!-- 제이쿼리UI js -->
+    <script src="js/slick.min.js"></script><!-- 슬릭 슬라이더 js -->
+
+    <style>
+        #nav{width: 100%; height: 100px;background: #fff;position: fixed; z-index: 9999; }
+        .menu ul{height: 100px; display: flex; justify-content: center; align-items: center;}
+        .menu ul li{margin: 0 50px; position: relative;}
+        .menu ul li::after{content: "";width: 0%;height: 2px; background: #F5515F; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); transition: all 0.6s;}
+        .menu ul li.active::after{width: 100%;}
+        .menu ul li a{}
+        .menu em{font-size: 30px; text-transform: uppercase;}
+
+        #section1{background: linear-gradient(to right,#B1EA4D 0%, #459522 100%);}
+        #section2{background: linear-gradient(to right,#6E8EFB 0%, #A777E3 100%);}
+        #section3{background: linear-gradient(to right,#13F1FC 0%, #0470DC 100%);}
+        #section4{background: linear-gradient(to right,#F5515F 0%, #A1051D 100%);}
+        .section{height: 100vh; display: flex; justify-content: center; align-items: center;}
+        .section h2{font-size: 100px;text-transform: uppercase; color: #fff; transform: translateY(300px); opacity: 0; transition: all 2.6s;}
+        .section.active h2{ transform: translateY(0px); opacity: 1;}
+
+    </style>
+</head>
+<body>
+
+    <nav id="nav">
+        <div class="menu">
+            <ul>
+                <li class="active"><a href="#"><em>menu1</em></a></li>
+                <li><a href="#"><em>menu2</em></a></li>
+                <li><a href="#"><em>menu3</em></a></li>
+                <li><a href="#"><em>menu4</em></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+
+    <main id="main">
+        <section id="section1">
+            <div class="section section1">
+                <h2>section1</h2>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="section section2">
+                <h2>section2</h2>
+            </div>
+        </section>
+        <section id="section3">
+            <div class="section section3">
+                <h2>section3</h2>
+            </div>
+        </section>
+        <section id="section4">
+            <div class="section section4">
+                <h2>section4</h2>
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
+    <script>
+
+        let menu = $(".menu ul li");
+        let section = $(".section");
+
+        menu.click(function(e){
+            let target = $(this);
+            let index = target.index();
+            let offsetTop = section.eq(index).offset().top;
+            e.preventDefault();
+
+            target.addClass("active").siblings().removeClass("active");
+            $("html,body").animate({scrollTop:offsetTop},600);
+        });
+
+        
+        $(window).scroll(function(){
+            let scrollTop = $(window).scrollTop();
+            let scrollToTop = $(window).scrollTop() +$(window).height() / 2 ;
+
+            for(let i=1; i<=section.length;i++){
+                if(scrollToTop >= $(".section"+i).offset().top){
+                    $(".section"+i).addClass("active");
+                    /* $(".menu ul li").eq(i).addClass("active").siblings().removeClass("active"); */
+                }
+                if(scrollToTop >= $("#section1").offset().top){
+                    $(".menu > ul > li").eq(0).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollToTop >= $("#section2").offset().top){
+                    $(".menu > ul > li").eq(1).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollToTop >= $("#section3").offset().top){
+                    $(".menu > ul > li").eq(2).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollToTop >= $("#section4").offset().top){
+                    $(".menu > ul > li").eq(3).addClass("active").siblings().removeClass("active");
+                }
+
+            }
+
+        });
+
+
+            
+
+
+    </script>
+    
+</body>
+</html>
