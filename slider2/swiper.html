@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/slick.css"><!-- 슬릭 슬라이드 css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/><!-- 스와이퍼 슬라이드 css -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> <!-- 스와이퍼 슬라이드 js -->
+    <script src="js/script.js"></script> <!-- 슬릭 슬라이드 js -->
+
+</head>
+<body>
+    <section id="section2">
+        <div class="swiper mySwiper slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide bg1">
+                    <span>Lorem Ipsum is simply </span>  
+                    <p>dummy text of the printing and typesetting industry.</p>
+                    <div> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        <br>when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>when an unknown printer took a galley of type and scra
+                    </div>    
+                </div>
+                <div class="swiper-slide bg2">
+                    <span>Lorem Ipsum is simply </span>  
+                    <p>dummy text of the printing and typesetting industry.</p>
+                    <div> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        <br>when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>when an unknown printer took a galley of type and scra
+                    </div>   
+                </div>
+                <div class="swiper-slide bg3">
+                    <span>Lorem Ipsum is simply </span>  
+                    <p>dummy text of the printing and typesetting industry.</p>
+                    <div> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        <br>when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>when an unknown printer took a galley of type and scra
+                    </div>    
+                </div>
+                <div class="swiper-slide bg4">
+                    <span>Lorem Ipsum is simply </span>  
+                    <p>dummy text of the printing and typesetting industry.</p>
+                    <div> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        <br>when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        <br>when an unknown printer took a galley of type and scra
+                    </div>    
+                </div>
+            </div>
+            <div class="btn">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <script>
+
+        var swiper = new Swiper(".mySwiper", {
+            loop:true,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+        },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        $(window).scroll(function(){
+            let scrollTop = $(this).scrollTop() + $(window).height() / 2;
+            let offsetTop = $("#section3").offset().top - 50;
+
+            if(scrollTop >= offsetTop){
+                $(".bg h1").css({mixBlendMode : "screen"});
+            }else{
+                $(".bg h1").css({mixBlendMode : "normal"});
+            }
+        });
+
+
+
+
+    </script>
+</body>
+</html>

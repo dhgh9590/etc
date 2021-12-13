@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slick</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slick.css"><!-- 슬릭 슬라이드 css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script> <!-- 슬릭 슬라이드 js -->
+
+</head>
+<body>
+    <section id="section1">
+        <div class="slider">
+            <div>
+                <figure>
+                    <img src="img/0.jpg" alt="이미지1">
+                    <figcaption><em>Responsive Site1</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <img src="img/1.jpg" alt="이미지2">
+                    <figcaption><em>Responsive Site2</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <img src="img/2.jpg" alt="이미지3">
+                    <figcaption><em>Responsive Site3</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        //slick슬라이더 탭기능과 함께 사용할 경우 탭기능 안에 $('.slider').slick('setPosition'); 추가.
+        //탭될때 슬라이더 깨짐현상 있음.
+        //이미지 슬라이더
+        $(".slider").slick({
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+        });
+
+    </script>
+</body>
+</html>
