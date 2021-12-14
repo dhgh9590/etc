@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* section2 스와이퍼 */
+#section2{width: 100%;height: 100vh;display: flex; justify-content: center; align-items: center;}
+.slider {width: 1280px; height: 500px; }
+.slider .swiper-slide{display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; color: #092f6e;}
+.slider .swiper-slide.bg1{background: url(../img/alex-gruber-ZOCb5G9tA7A-unsplash.jpg) no-repeat center / cover;}
+.slider .swiper-slide.bg2{background: url(../img/gustavo-zambelli-PauYmReNIWE-unsplash.jpg) no-repeat center / cover; color: #fff; }
+.slider .swiper-slide.bg3{background: url(../img/marek-piwnicki-77yhiIfZ8EY-unsplash.jpg) no-repeat center / cover;}
+.slider .swiper-slide.bg4{background: url(../img/nick-scheerbart-nKlld8A1Vy4-unsplash.jpg) no-repeat center / cover;color: #fff;}
+
+.slider .swiper-slide span{ font-size: 40px; margin-top: -150px; opacity: 0;}
+.slider .swiper-slide p{font-size: 60px; font-weight: bold; opacity: 0;}
+.slider .swiper-slide div{font-size: 20px; opacity: 0;}
+
+.slider .swiper-slide.swiper-slide-active span{animation: text 1s 0.2s both;}
+.slider .swiper-slide.swiper-slide-active p{animation: text 1s 0.5s both;}
+.slider .swiper-slide.swiper-slide-active div{animation: text 1s 0.8s both;}
+
+@keyframes text{
+    0%{opacity: 0; transform: translateY(30px);}
+    100%{opacity: 1; transform: translateY(0px);}
+}
+.swiper-button-next{margin-right: 50px; color: #fff;}
+.swiper-button-prev{margin-left: 50px; color: #fff;}
+
+.pagination-fraction{}
+.swiper-pagination{font-size: 50px;color: #fff; position: absolute; bottom: 0; left: -40%;}
+.swiper-pagination-current{}
+
+
+.swiper-pagination-bullet { width: 12px; height: 12px; background: transparent; border: 1px solid pink; opacity: 1; }
+.swiper-pagination-bullet-active { width: 80px; transition: width .5s; border-radius: 5px; background: pink; border: 1px solid transparent; }

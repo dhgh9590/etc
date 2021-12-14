@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 /* section1 슬릭*/
-#section1{width: 100%;height: 100vh;display: flex; justify-content: center; align-items: center;}
+#section1{width: 100%; height: 100vh;display: flex; justify-content: center; align-items: center;}
+.slider_wrap{position: relative;height: 100vh; width: 100%;}
 .slider {}
-.slider figure {position: relative; height: 50vh;}
-.slider figure img{width: 1280px;height: 50vh;object-fit: cover;}
+.slider figure {position: relative; }
+.slider figure img{width: 100%; height: 100vh;object-fit: cover;}
 .slider figcaption {position: absolute; bottom: 0;left: 0;width: 100%; padding: 20px; box-sizing: border-box; background-color: rgba(0, 0, 0, 0.5);color: #fff; font-size: 18px;}
 .slider figcaption em {display: block; font-weight: bold; font-size: 28px; text-transform: uppercase; font-family: 'Abel', sans-serif; opacity: 0; transition: all .84s ease; transform: translateX(50px);}
 .slider figcaption span {display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; opacity: 0; transition: all .84s 0.2s ease; transform: translateX(50px);}
@@ -14,50 +15,25 @@
 .slider .slick-dots li {display: inline-block; width: 15px;height: 15px;margin: 5px;}
 .slider .slick-dots button {font-size: 0; line-height: 0; display: block; width: 15px;height: 15px; cursor: pointer; background: #5dbfeb; border-radius: 50%;}
 .slider .slick-dots li.slick-active button {background: #2b91c8; } /* 버튼 활성화 */
-.slider .slick-prev {position: absolute; left: 0;bottom: 0;z-index: 1000; width: 30px;height: 30px; display: inline-block; text-indent: -9999px; font: normal normal normal 14px/1 FontAwesome;}
+.slider .slick-prev {position: absolute; left: 0;bottom: 0; z-index: 1000; width: 30px;height: 30px; display: inline-block; text-indent: -9999px; font: normal normal normal 14px/1 FontAwesome;}
 .slider .slick-prev:before {content: "\f053"; color: #5dbfeb; text-indent: 0; position: absolute; left: 9px; top: 8px;}
 .slider .slick-next {position: absolute; right: 0;bottom: 0;z-index: 1000; width: 30px;height: 30px; display: inline-block; text-indent: -9999px; font: normal normal normal 14px/1 FontAwesome;}
 .slider .slick-next:before {content: "\f054"; color: #5dbfeb; text-indent: 0; position: absolute; left: 11px; top: 8px;}
 
+.page_number{position: absolute; bottom: 10px; right: 10px; width: 50px;height: 50px; background: #fff;}/* 페이지 번호 컨트롤 */
+.page_number span{display:inline-block;vertical-align:top;}/* 현재 페이지 번호 */
+.page_number em{padding-top: 21px;display:inline-block;padding-left: 5px;opacity: 0.5;position: relative;}/* 페이지 총 갯수 */
+.page_number em:before{content:"";width: 30px;height: 1px;position:absolute;background:#000;left: -13px;transform: rotate(-45deg);top: 21px;} /* 페이지 슬라이드 아이콘 */
 
-/* section2 스와이퍼 */
-#section2{width: 100%;height: 100vh;display: flex; justify-content: center; align-items: center;}
-.slider {width: 1280px; height: 500px; }
-.slider .swiper-slide{display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; color: #092f6e;}
-.slider .swiper-slide.bg1{background: url(../img/alex-gruber-ZOCb5G9tA7A-unsplash.jpg) no-repeat center / cover;}
-.slider .swiper-slide.bg2{background: url(../img/gustavo-zambelli-PauYmReNIWE-unsplash.jpg) no-repeat center / cover; color: #fff; }
-.slider .swiper-slide.bg3{background: url(../img/marek-piwnicki-77yhiIfZ8EY-unsplash.jpg) no-repeat center / cover;}
-.slider .swiper-slide.bg4{background: url(../img/nick-scheerbart-nKlld8A1Vy4-unsplash.jpg) no-repeat center / cover;color: #fff;}
+/* 슬릭 좌,우 버튼
+.slider_wrap .btn {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);}
+.slider_wrap .btn button{width: 50px;height: 50px;}
+.slider_wrap .btn button i{font-size: 30px;}
+*/
 
-.slider .swiper-slide span{ font-size: 40px; margin-top: -150px; opacity: 0;}
-.slider .swiper-slide p{font-size: 60px; font-weight: bold; opacity: 0;}
-.slider .swiper-slide div{font-size: 20px; opacity: 0;}
-
-.slider .swiper-slide.swiper-slide-active span{animation: text 1s 0.2s both;}
-.slider .swiper-slide.swiper-slide-active p{animation: text 1s 0.5s both;}
-.slider .swiper-slide.swiper-slide-active div{animation: text 1s 0.8s both;}
-
-@keyframes text{
-    0%{
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-.swiper-button-next{margin-right: 50px; color: #fff;}
-.swiper-button-prev{margin-left: 50px; color: #fff;}
-
-.pagination-fraction{}
-.swiper-pagination{font-size: 50px;color: #fff; position: absolute; bottom: 0; left: -40%;}
-.swiper-pagination-current{}
-
-
-.swiper-pagination-bullet { width: 12px; height: 12px; background: transparent; border: 1px solid pink; opacity: 1; }
-.swiper-pagination-bullet-active { width: 80px; transition: width .5s; border-radius: 5px; background: pink; border: 1px solid transparent; }
-
+/* 슬릭 닷 버튼 강제로 삭제
+.slider_wrap .slick-dots{display: none!important;}
+*/
 
 
 

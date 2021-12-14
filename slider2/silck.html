@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/slick.css"><!-- 슬릭 슬라이드 css -->
+    <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -15,27 +16,40 @@
 </head>
 <body>
     <section id="section1">
-        <div class="slider">
-            <div>
-                <figure>
-                    <img src="img/0.jpg" alt="이미지1">
-                    <figcaption><em>Responsive Site1</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
-                </figure>
+        <div class="slider_wrap">
+            <div class="slider">
+                <div>
+                    <figure>
+                        <img src="img/0.jpg" alt="이미지1">
+                        <figcaption><em>Responsive Site1</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <img src="img/1.jpg" alt="이미지2">
+                        <figcaption><em>Responsive Site2</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <img src="img/2.jpg" alt="이미지3">
+                        <figcaption><em>Responsive Site3</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
+                    </figure>
+                </div>
             </div>
-            <div>
-                <figure>
-                    <img src="img/1.jpg" alt="이미지2">
-                    <figcaption><em>Responsive Site2</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
-                </figure>
+            <div class="page_number">
+                <span>01</span>
+                <em></em>
             </div>
-            <div>
-                <figure>
-                    <img src="img/2.jpg" alt="이미지3">
-                    <figcaption><em>Responsive Site3</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption>
-                </figure>
+             <!-- 슬릭 좌,우 버튼
+            <div class="btn">
+                <button type="button" class="prev"><i class="fas fa-chevron-left"></i></button>
+                <button type="button" class="next"><i class="fas fa-chevron-right"></i></button>
             </div>
+            -->
         </div>
     </section>
+    
 
     <script>
         //slick슬라이더 탭기능과 함께 사용할 경우 탭기능 안에 $('.slider').slick('setPosition'); 추가.
@@ -46,7 +60,18 @@
             autoplay: true,
             autoplaySpeed: 3000,
             arrows: true,
+            /*
+            prevArrow : $('.slider_wrap .btn .prev'), 
+            nextArrow : $('.slider_wrap .btn .next'),
+            */
         });
+
+        /* 슬릭 슬라이드 페이지 번호 */
+        $(".slider_wrap .slick-slider").on("afterChange", function(){
+            var slide_ing = $(".slider_wrap .slick-dots li.slick-active").index()+1;
+        $(".page_number span").text("0"+slide_ing)});
+            var slide_all = $(".slider_wrap .slick-dots li").length;
+        $(".page_number em").text("0"+slide_all);
 
     </script>
 </body>
