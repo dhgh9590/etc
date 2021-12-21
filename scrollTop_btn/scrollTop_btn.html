@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="menu">
+            <ul>
+                <li><a href="#"><em>menu1</em></a></li>
+                <li><a href="#"><em>menu2</em></a></li>
+                <li><a href="#"><em>menu3</em></a></li>
+                <li><a href="#"><em>menu4</em></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="top">
+        <em>top</em>
+    </div>
+    <main id="main">
+        <section></section>
+    </main>
+
+    <script>
+        let menu = document.querySelector(".menu");
+        let menuList = document.querySelectorAll(".menu ul li");
+        let btnTop = document.querySelector(".top");
+        let docElem = document.documentElement;
+        let offset;
+        let scrollPos;
+        let docHeight;
+
+        //문서의 높이값 구하기
+        docHeight = Math.max(docElem.offsetHeight,docElem.scrollHeight);
+
+        //문서전체 높이값의 1/4구하기
+        if(docHeight != 0){
+            offset = docHeight / 4;
+        }
+
+        //윈도우에 스크롤이벤트 발생시
+        window.addEventListener("scroll",function(){
+            scrollPos = docElem.scrollTop;
+
+            if(scrollPos > offset){//스크롤한 값이 문서의 1/4값 보다 크다면 
+                btnTop.classList.add("visible");
+            }else{
+                btnTop.classList.remove("visible");
+            }
+        });
+
+        //버튼 클릭시 할 일
+        btnTop.addEventListener("click",function(e){
+            e.preventDefault();
+            scrollToTop();//실제로 할일을 함수로 선언
+        });
+
+        //윈도우 스크롤 값 변경
+        function scrollToTop(){
+            let scrollIntervar = setInterval(function(){//clearInterval을 쓰기위해서는 setInterval 이름이 필요함
+                if(scrollPos != 0){
+                    window.scrollBy(0,-55);// 0.015초 마다 윈도우 스크롤 값 y축 -55씩 빼기
+                }else{
+                    clearInterval(scrollIntervar);//스크롤값 빼기 정지
+                }
+            },15);
+        }
+
+        //메뉴 
+        for(let i=0;i<menuList.length;i++){
+            menuList[i].addEventListener("click",function(){
+                this.classList.toggle("active");
+            });
+        }
+        
+
+    </script>
+</body>
+</html>
